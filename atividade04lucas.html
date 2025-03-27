@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+ <html lang="pt-br">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title> Cálculo de resistência de um resistor pelo código de cores </title>
+      <style type="text/css">
+         header{
+             text-align: center;
+ 
+         }
+         .index{
+        
+             display: flex;
+             justify-content: center;
+             align-items: center;
+         }
+         .Formulario{
+             border: 2px solid #348e91;
+             padding: 10px;
+             border-radius: 5px;
+             background: #9dbfaf;
+             text-align: center;
+         }
+         #divResult{
+             margin-left: auto;
+             margin-right: auto;
+ 
+             height: 18px;
+             width: 150px;
+             background: white;
+             border: 2px solid #f4b036;
+             box-shadow: 2px 2px 2px gray;
+ 
+         }
+     </style>
+ </head>
+ <body>
+     <header><h1> Sistema Cálculo de Resistência <h1></header>
+     <div class="index">
+     <form class="Formulario">
+         <p>Primeira Faixa - <select name="cor1" id="n1">
+             <option value="0"> Preto </option>
+             <option value="1"> Marrom </option>
+             <option value="2"> Vermelho </option>
+             <option value="3"> Laranja </option>
+             <option value="4"> Amarelo </option>
+             <option value="5"> Verde </option>
+             <option value="6"> Azul </option>
+             <option value="7"> Violeta </option>
+             <option value="8"> Cinza </option>
+             <option value="9"> Branco </option>
+         </select></p>
+         <p>Segunda Faixa - <select name="cor2" id="n2">
+             <option value="0"> Preto </option>
+             <option value="1"> Marrom </option>
+             <option value="2"> Vermelho </option>
+             <option value="3"> Laranja </option>
+             <option value="4"> Amarelo </option>
+             <option value="5"> Verde </option>
+             <option value="6"> Azul </option>
+             <option value="7"> Violeta </option>
+             <option value="8"> Cinza </option>
+             <option value="9"> Branco </option>
+         </select></p>
+         <p>Multiplicador - <select name="mult" id="mult">
+             <option value="1"> Preto </option>
+             <option value="10"> Marrom </option>
+             <option value="100"> Vermelho </option>
+             <option value="1000"> Laranja </option>
+             <option value="10000"> Amarelo </option>
+             <option value="100000"> Verde </option>
+             <option value="1000000"> Azul </option>
+             <option value="10000000"> Violeta </option>
+             <option value="0.1"> Dourado </option>
+             <option value="0.01"> Prateado </option>
+         </select></p>
+         <p><button type="button" onclick="Calcular()"> Calcular </button></p>
+         <p>Resultado:<input type="text" id="result" readonly></p>
+     </form>
+     </div>
+     <script>
+         function Calcular(){
+             let Color1 = document.getElementById("n1").value;
+             let Color2 = document.getElementById("n2").value;
+             let Multipl = document.getElementById("mult").value;
+             let calculo = (Color1 + Color2) * Multipl
+             document.getElementById("result").value = calculo + "Ω";
+         }
+    
+ 
+    </script>
+ </body>
+ </html>
